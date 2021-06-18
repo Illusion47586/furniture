@@ -1,0 +1,22 @@
+@use './base/typography';
+@use './base/removeFocusBorder';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root,
+body,
+html {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  padding: 0 40px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
