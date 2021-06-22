@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap");
 html,
 .root {
   font-size: 13px;
@@ -112,6 +112,23 @@ button:active {
   outline: none;
 }
 
+button {
+  padding: 10px 20px;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s;
+  font-size: 1.25em;
+  border: 1.5px solid white;
+}
+button:hover, button:active {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -124,7 +141,15 @@ html {
   display: flex;
   justify-content: center;
   width: 100vw;
-  padding: 0 40px;
+  overflow-x: hidden;
+}
+
+body {
+  height: 100vh;
+  background-image: url("../../images/hero.jpg");
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
 }
 
 a {

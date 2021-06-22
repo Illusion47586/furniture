@@ -1,0 +1,108 @@
+section#main {
+  padding: 20px;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section#main nav {
+  position: absolute;
+  top: 30px;
+}
+section#main button#menu {
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: white;
+}
+section#main .carouselControl {
+  padding: 10px;
+  width: min-content;
+  min-width: 100px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+section#main .carouselControl#prev {
+  left: 0;
+  transform: rotate(-90deg);
+}
+section#main .carouselControl#prev:hover {
+  left: -3px;
+}
+section#main .carouselControl#next {
+  right: 0;
+  transform: rotate(90deg);
+}
+section#main .carouselControl#next h4 {
+  padding-right: 0;
+}
+section#main .carouselControl#next:hover {
+  right: -3px;
+}
+section#main .carouselControl #indicator {
+  top: 0;
+  bottom: 0;
+  transform: translateY(0);
+}
+section#main .carouselControl #indicator svg {
+  color: #fff;
+}
+section#main .carouselControl h4 {
+  margin: 0;
+  color: white;
+  padding-right: 10px;
+}
+section#main .carouselControl:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+section#main #title {
+  color: white;
+  padding: 20px;
+  max-width: 80%;
+  position: absolute;
+  top: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+section#main #title * {
+  margin: 0;
+}
+section#main #title h1 {
+  margin-bottom: 10px;
+}
+section#main #title button#explore {
+  color: black;
+  margin-top: 140px;
+  min-width: 100px;
+  background-color: rgba(255, 255, 255, 0.616);
+  backdrop-filter: blur(2px) brightness(98%);
+}
+section#main #title button#explore:hover {
+  background-color: transparent;
+  color: white;
+  backdrop-filter: blur(4px);
+}
+section#main .discount {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+}

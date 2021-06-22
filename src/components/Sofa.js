@@ -21,7 +21,8 @@ const Sofa = () => {
   const ref = useRef();
   const snap = useSnapshot(state);
 
-  const { nodes, materials } = useGLTF("/models/GlamVelvetSofa.glb");
+  const { nodes, materials } = useGLTF("/models/couch.glb");
+  console.log(nodes, materials);
 
   // useFrame((state) => {
   //   const t = state.clock.getElapsedTime();
@@ -32,8 +33,20 @@ const Sofa = () => {
   // });
 
   return (
-    <group castShadow>
-      <mesh
+    // <group castShadow>
+    <mesh
+      receiveShadow
+      castShadow
+      geometry={nodes.Couch001.geometry}
+      material={materials["CouchClothGreyMaterial.001"]}
+      material-color={snap.items.fabric}
+    />
+  );
+};
+
+export default Sofa;
+
+/* <mesh
         receiveShadow
         castShadow
         geometry={nodes.GlamVelvetSofa_fabric.geometry}
@@ -51,9 +64,5 @@ const Sofa = () => {
         castShadow
         geometry={nodes.GlamVelvetSofa_legs.geometry}
         material={materials.GlamVelvetSofa_legs}
-      />
-    </group>
-  );
-};
-
-export default Sofa;
+      /> */
+// </group>

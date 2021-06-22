@@ -1,0 +1,71 @@
+@use '../abstracts/mixins';
+
+.discount {
+  @include mixins.center;
+  img {
+    height: 120px;
+    width: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.151);
+  }
+
+  &_content {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    padding-top: 8px;
+    height: 100px;
+    width: 170px;
+    background-color: #fff;
+    border-bottom-right-radius: 7px;
+    border-top-right-radius: 7px;
+
+    @include mixins.glass;
+    backdrop-filter: blur(6px);
+    color: #fff;
+    box-shadow: none;
+
+    h3 {
+      margin: 0;
+      margin-bottom: 0.2em;
+      font-size: 1.2em;
+    }
+
+    p {
+      font-size: 0.9em;
+    }
+  }
+
+  .close {
+    position: absolute;
+    top: 18px;
+    right: 5px;
+    cursor: pointer;
+  }
+
+  .code_container {
+    position: relative;
+  }
+
+  .code {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 20px);
+    @include mixins.center;
+    font-size: 1.1em;
+    letter-spacing: 5px;
+    font-weight: 500;
+    // background-color: rgba(255, 255, 255, 0.39);
+    backdrop-filter: blur(2px) brightness(85%);
+    padding: 5px;
+    border-radius: 5px;
+
+    p {
+      margin: 0;
+      color: white;
+    }
+  }
+}

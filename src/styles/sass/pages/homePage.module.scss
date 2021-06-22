@@ -1,0 +1,118 @@
+@use '../abstracts/mixins';
+
+section#main {
+  padding: 20px;
+  height: 100vh;
+  width: 100vw;
+  @include mixins.center;
+
+  nav {
+    position: absolute;
+    // margin: 0;
+    top: 30px;
+  }
+
+  button#menu {
+    padding: 0;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: white;
+  }
+
+  .carouselControl {
+    padding: 10px;
+    width: min-content;
+    min-width: 100px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 60%;
+    @include mixins.center;
+    transition: all 0.3s;
+    cursor: pointer;
+
+    &#prev {
+      left: 0;
+      transform: rotate(-90deg);
+
+      &:hover {
+        left: -3px;
+      }
+    }
+
+    &#next {
+      right: 0;
+      transform: rotate(90deg);
+
+      h4 {
+        padding-right: 0;
+      }
+
+      &:hover {
+        right: -3px;
+      }
+    }
+
+    #indicator {
+      top: 0;
+      bottom: 0;
+      transform: translateY(0);
+      svg {
+        color: #fff;
+      }
+    }
+
+    h4 {
+      margin: 0;
+      color: white;
+      padding-right: 10px;
+    }
+
+    &:hover {
+      opacity: 1;
+      @include mixins.glass;
+    }
+  }
+
+  #title {
+    color: white;
+    padding: 20px;
+    max-width: 80%;
+    position: absolute;
+    top: 30%;
+    @include mixins.center;
+    flex-direction: column;
+
+    * {
+      margin: 0;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    button#explore {
+      color: black;
+      margin-top: 140px;
+      min-width: 100px;
+      background-color: rgba(255, 255, 255, 0.616);
+      backdrop-filter: blur(2px) brightness(98%);
+
+      &:hover {
+        background-color: transparent;
+        color: white;
+        backdrop-filter: blur(4px);
+      }
+    }
+  }
+
+  .discount {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+  }
+}

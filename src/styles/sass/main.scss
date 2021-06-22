@@ -1,5 +1,6 @@
 @use './base/typography';
 @use './base/removeFocusBorder';
+@use './base/button';
 
 * {
   margin: 0;
@@ -13,7 +14,15 @@ html {
   display: flex;
   justify-content: center;
   width: 100vw;
-  padding: 0 40px;
+  overflow-x: hidden;
+}
+
+body {
+  height: 100vh;
+  background-image: url("../../images/hero.jpg");
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
 }
 
 a {

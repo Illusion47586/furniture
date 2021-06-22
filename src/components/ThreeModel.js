@@ -43,16 +43,16 @@ const ThreeModel = ({ children }) => {
         castShadow
       />
       <Suspense fallback={null}>
-        <group
+        {/* <group
           castShadow
           dispose={null}
           scale={new Vector3(2, 2, 2)}
           rotation={new Euler(0, 0, 0)}
           position={new Vector3(-0.5, 0, 0.75)}
           animations={[]}
-        >
-          {children}
-        </group>
+        > */}
+        {children}
+        {/* </group> */}
         {/* <Environment preset="apartment" /> */}
 
         <Plane

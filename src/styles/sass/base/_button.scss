@@ -1,0 +1,16 @@
+@use '../abstracts/mixins';
+
+button {
+  padding: 10px 20px;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s;
+  font-size: 1.25em;
+  border: 1.5px solid white;
+
+  &:hover,
+  &:active {
+    @include mixins.glass;
+  }
+}
