@@ -20,7 +20,6 @@ const DiscountCard = () => {
           initial="hidden"
           animate="visible"
           exit="hidden"
-          // transition={{ duration: 1 }}
           variants={variants}
         >
           <div className={classes.code_container}>

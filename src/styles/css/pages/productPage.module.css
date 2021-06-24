@@ -1,0 +1,26 @@
+section#product {
+  height: 100vh;
+  width: 100vw;
+}
+section#product #focus {
+  height: calc(75% - 20px);
+  width: 100%;
+  background-color: blue;
+}
+section#product ul {
+  display: flex;
+  width: 100%;
+  list-style: none;
+}
+section#product ul li {
+  width: calc((100vw - 50px) / 4);
+  height: 25vh;
+  background-color: orange;
+  margin: 10px 5px;
+}
+section#product ul li:first-child {
+  margin-left: 10px;
+}
+section#product ul li:last-child {
+  margin-right: 10px;
+}

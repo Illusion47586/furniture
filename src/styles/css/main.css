@@ -10,8 +10,6 @@ body,
   font-family: "Manrope", sans-serif;
   font-size: 1em;
   line-height: 1.38461538em;
-  max-width: 560px;
-  margin: auto;
 }
 
 h1,
@@ -139,17 +137,11 @@ button:hover, button:active {
 body,
 html {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: stretch;
   width: 100vw;
   overflow-x: hidden;
-}
-
-body {
-  height: 100vh;
-  background-image: url("../../images/hero.jpg");
-  background-size: cover;
-  background-position: bottom;
-  background-repeat: no-repeat;
+  padding: 0;
 }
 
 a {

@@ -1,6 +1,9 @@
 @use '../abstracts/mixins';
 
 .discount {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
   @include mixins.center;
   img {
     height: 120px;

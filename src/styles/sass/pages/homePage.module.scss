@@ -1,15 +1,56 @@
 @use '../abstracts/mixins';
 
 section#main {
-  padding: 20px;
+  background-color: black;
   height: 100vh;
   width: 100vw;
   @include mixins.center;
 
-  nav {
+  #carousel {
     position: absolute;
-    // margin: 0;
-    top: 30px;
+    height: 100vh;
+    width: 100vw;
+
+    img {
+      position: absolute;
+      height: 100vh;
+      width: 100vw;
+      object-fit: cover;
+      object-position: bottom;
+      opacity: 0.75;
+      // visibility: hidden;
+      transform: scale(0.95);
+      z-index: -1;
+      transition: all 0.3s;
+
+      // &[status="hidden"] {
+      //   opacity: 0;
+      //   visibility: hidden;
+      //   transform: scale(0.8);
+      //   z-index: -2;
+      //   filter: blur(3px);
+      //   transition: all 0.3s, transform 0.6s;
+      // }
+
+      &[active="active"] {
+        opacity: 1;
+        // visibility: visible;
+        transform: scale(1);
+        z-index: 0;
+        transition: all 0.3s, transform 0.6s;
+      }
+    }
+
+    #overlay {
+      position: absolute;
+      height: 100vh;
+      width: 100vw;
+      background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.1491947120645133) 0%,
+        transparent
+      );
+    }
   }
 
   button#menu {
@@ -108,11 +149,5 @@ section#main {
         backdrop-filter: blur(4px);
       }
     }
-  }
-
-  .discount {
-    position: absolute;
-    bottom: 25px;
-    right: 25px;
   }
 }

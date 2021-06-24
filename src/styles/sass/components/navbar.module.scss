@@ -2,8 +2,13 @@
 @use '../abstracts/mixins';
 
 nav {
-  // background-image: constants.$noise_bg;
-  width: calc(100% - 80px);
+  // background-image: constants.$noise_bg;\
+  position: fixed;
+  // margin: 0;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - (2 * var(--basePadding)));
   backdrop-filter: blur(4px) brightness(95%);
   color: white;
   @include mixins.center;
@@ -46,7 +51,9 @@ nav {
   }
 
   &[data-expanded="false"] {
-    padding-right: 2.7em;
+    padding-right: 1.5em;
+    // display: flex;
+    // flex-direction: column;
   }
 }
 
@@ -56,12 +63,13 @@ nav {
 
 .menu {
   z-index: 1000;
-  width: 100%;
+  width: calc(100% - (var(--basePadding)));
   padding: 2.7em;
   margin-top: 20px;
-  background-color: #29282e;
+  backdrop-filter: blur(6px) brightness(95%);
+
   color: white;
-  background-image: constants.$noise_bg;
+  // background-image: constants.$noise_bg;
 
   ul {
     flex-direction: column;
@@ -83,9 +91,23 @@ nav {
   }
 }
 
+// @media screen and (max-width: 768px) {
+//   nav {
+//     &[data-expanded="false"] {
+//       padding-right: 1.5em;
+//       display: flex;
+//     }
+//   }
+
+//   .menu {
+//     padding: 2em;
+//   }
+// }
+
 @media screen and (max-width: 426px) {
   nav {
     padding: 1em 2em;
+    width: calc(100% - (2 * var(--basePaddingMobile)));
 
     &[data-expanded="false"] {
       padding-right: 1.5em;
@@ -93,6 +115,7 @@ nav {
   }
 
   .menu {
+    width: calc(100% - (var(--basePaddingMobile)));
     padding: 2em;
   }
 }

@@ -1,26 +1,55 @@
 import React, { useState } from "react";
 
-import { List, ArrowUp, Circle } from "phosphor-react";
+import { ArrowUp } from "phosphor-react";
 import UseAnimations from "react-useanimations";
-import Navbar from "../components/Navbar";
-import menu from "react-useanimations/lib/menu4";
 import arrowUp from "react-useanimations/lib/arrowUp";
 import scrollDown from "react-useanimations/lib/scrollDown";
-import DiscountCard from "../components/DiscountCard";
 
 import styles from "../styles/css/pages/homePage.module.css";
+import hero from "../images/hero.jpg";
+import hero2 from "../images/hero2.png";
+import hero3 from "../images/hero3.jpg";
+import hero4 from "../images/hero4.jpg";
+import hero5 from "../images/hero5.jpg";
+
+const images = [hero, hero2, hero3, hero4, hero5];
 
 const HomePage = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const length = images.length;
+
+  const next = () => {
+    const newIndex = (currentIndex + 1) % length;
+    console.log(currentIndex, "->", newIndex);
+    setCurrentIndex(newIndex);
+  };
+
+  const prev = () => {
+    const newIndex = currentIndex === 0 ? length - 1 : currentIndex - 1;
+    console.log(currentIndex, "->", newIndex);
+    setCurrentIndex(newIndex);
+  };
+
   return (
     <section id={styles.main}>
-      <Navbar />
+      <div id={styles.carousel}>
+        {images.map((image, index) => (
+          <img
+            src={image}
+            alt="hero"
+            id={`hero${index}`}
+            active={currentIndex === index ? "active" : "inactive"}
+          />
+        ))}
+        <div id={styles.overlay}></div>
+      </div>
 
-      <div className={styles.carouselControl} id={styles.prev}>
+      <div className={styles.carouselControl} id={styles.prev} onClick={prev}>
         <h4>Previous</h4>
         <ArrowUp weight="bold" color="white" />
       </div>
 
-      <div className={styles.carouselControl} id={styles.next}>
+      <div className={styles.carouselControl} id={styles.next} onClick={next}>
         <h4>Next</h4>
         <UseAnimations
           animation={arrowUp}
@@ -36,10 +65,6 @@ const HomePage = () => {
         <p>Everything from furniture to home appliances, all in one place.</p>
 
         <button id={styles.explore}>Explore</button>
-      </div>
-
-      <div className={styles.discount}>
-        <DiscountCard />
       </div>
     </section>
   );

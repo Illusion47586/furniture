@@ -2,6 +2,8 @@ import React from "react";
 
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
+import ProductPage from "./pages/ProductPage";
+import DiscountCard from "./components/DiscountCard";
 // import NewSofa from "./components/NewSofa";
 // import Sofa from "./components/Sofa";
 
@@ -10,7 +12,14 @@ import HomePage from "./pages/HomePage";
 const App = () => {
   return (
     // <div>
-    <HomePage />
+    <>
+      <HomePage />
+      <ProductPage />
+
+      <Navbar />
+
+      <DiscountCard />
+    </>
     // </div>
   );
 };

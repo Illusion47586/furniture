@@ -1,4 +1,7 @@
 .discount {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
   display: flex;
   justify-content: center;
   align-items: center;

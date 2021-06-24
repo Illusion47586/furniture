@@ -1,14 +1,38 @@
 section#main {
-  padding: 20px;
+  background-color: black;
   height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-section#main nav {
+section#main #carousel {
   position: absolute;
-  top: 30px;
+  height: 100vh;
+  width: 100vw;
+}
+section#main #carousel img {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  object-position: bottom;
+  opacity: 0.75;
+  transform: scale(0.95);
+  z-index: -1;
+  transition: all 0.3s;
+}
+section#main #carousel img[active=active] {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 0;
+  transition: all 0.3s, transform 0.6s;
+}
+section#main #carousel #overlay {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.1491947121) 0%, transparent);
 }
 section#main button#menu {
   padding: 0;
@@ -100,9 +124,4 @@ section#main #title button#explore:hover {
   background-color: transparent;
   color: white;
   backdrop-filter: blur(4px);
-}
-section#main .discount {
-  position: absolute;
-  bottom: 25px;
-  right: 25px;
 }

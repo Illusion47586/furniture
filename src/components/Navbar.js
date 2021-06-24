@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import { MagnifyingGlass, DotsThreeOutlineVertical, X } from "phosphor-react";
 import useWindowDimensions from "../hooks/windowDimensions";
+import UseAnimations from "react-useanimations";
+import menu from "react-useanimations/lib/menu4";
 
 import classes from "../styles/css/components/navbar.module.css";
 
@@ -42,10 +44,15 @@ const Navbar = () => {
         )}
         {isExpanded ? (
           <MagnifyingGlass size={25} />
-        ) : isOpen ? (
-          <X size={25} onClick={() => setIsOpen(false)} />
         ) : (
-          <DotsThreeOutlineVertical size={25} onClick={() => setIsOpen(true)} />
+          <UseAnimations
+            animation={menu}
+            size={36}
+            reverse={isOpen}
+            onClick={() => setIsOpen(!isOpen)}
+            strokeColor="white"
+            speed={2}
+          />
         )}
       </nav>
       <AnimatePresence initial={false}>
