@@ -69,7 +69,7 @@ const ThreeModel = ({ path }) => {
           <Environment preset="apartment" />
           <OrbitControls
             autoRotate
-            enableZoom={false}
+            enableZoom={true}
             enablePan={true}
             enableRotate={true}
           />

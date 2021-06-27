@@ -18,27 +18,13 @@ section#main {
       object-fit: cover;
       object-position: bottom;
       opacity: 0.75;
-      // visibility: hidden;
-      // filter: blur(4px) brightness(95%);
-
       transform: scale(0.9);
       z-index: -1;
       transition: all 0.8s;
 
-      // &[status="hidden"] {
-      //   opacity: 0;
-      //   visibility: hidden;
-      //   transform: scale(0.8);
-      //   z-index: -2;
-      //   filter: blur(3px);
-      //   transition: all 0.3s, transform 0.6s;
-      // }
-
       &[active="active"] {
         opacity: 1;
-        // visibility: visible;
         transform: scale(1);
-        // filter: blur(0) brightness(100%);
         z-index: 0;
         transition: all 0.3s, transform 0.6s;
       }
@@ -50,7 +36,6 @@ section#main {
       width: 100vw;
       background: rgb(0, 0, 0);
       background: linear-gradient(
-        // 90deg,
         rgba(0, 0, 0, 0.2) 0%,
         transparent 50%,
         rgba(0, 0, 0, 0.2) 100%

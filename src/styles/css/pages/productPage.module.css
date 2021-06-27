@@ -25,7 +25,11 @@ section#product #focus #content {
   align-items: center;
   flex-direction: column;
   justify-content: flex-end;
+  align-items: flex-start;
   height: 100%;
+}
+section#product #focus #content * {
+  margin-top: 0;
 }
 section#product ul {
   display: flex;

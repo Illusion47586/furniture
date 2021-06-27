@@ -25,10 +25,11 @@ section#product {
       @include mixins.center;
       flex-direction: column;
       justify-content: flex-end;
+      align-items: flex-start;
       height: 100%;
 
-      p {
-        // align-self: flex-end;
+      * {
+        margin-top: 0;
       }
     }
   }
