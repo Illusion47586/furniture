@@ -1,14 +1,14 @@
 .discount {
   position: fixed;
-  bottom: 25px;
-  right: 25px;
+  bottom: 30px;
+  right: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .discount img {
-  height: 120px;
-  width: 120px;
+  height: 140px;
+  width: 140px;
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.151);
@@ -18,17 +18,18 @@
   flex-direction: column;
   padding: 15px;
   padding-top: 8px;
-  height: 100px;
-  width: 170px;
+  height: 120px;
+  width: 200px;
   background-color: #fff;
   border-bottom-right-radius: 7px;
   border-top-right-radius: 7px;
   background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   backdrop-filter: blur(1.5px);
   -webkit-backdrop-filter: blur(1.5px);
   border: 1px solid rgba(255, 255, 255, 0.18);
   backdrop-filter: blur(6px);
+  border-left: none;
   color: #fff;
   box-shadow: none;
 }
@@ -42,8 +43,8 @@
 }
 .discount .close {
   position: absolute;
-  top: 18px;
-  right: 5px;
+  top: 19px;
+  right: 6px;
   cursor: pointer;
 }
 .discount .code_container {
@@ -51,7 +52,7 @@
 }
 .discount .code {
   position: absolute;
-  bottom: 10px;
+  bottom: 15px;
   left: 50%;
   transform: translateX(-50%);
   width: calc(100% - 20px);

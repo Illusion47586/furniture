@@ -1,9 +1,9 @@
 import React from "react";
 
+import DiscountCard from "./components/DiscountCard";
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import ProductPage from "./pages/ProductPage";
-import DiscountCard from "./components/DiscountCard";
 // import NewSofa from "./components/NewSofa";
 // import Sofa from "./components/Sofa";
 

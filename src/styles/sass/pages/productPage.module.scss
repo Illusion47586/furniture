@@ -1,3 +1,5 @@
+@use '../abstracts/mixins';
+
 section#product {
   height: 100vh;
   width: 100vw;
@@ -5,7 +7,30 @@ section#product {
   #focus {
     height: calc(75% - 20px);
     width: 100%;
-    background-color: blue;
+    background-color: #dbdbdb;
+    position: relative;
+
+    @include mixins.center;
+
+    #model {
+      width: 70%;
+      height: 100%;
+      position: relative;
+    }
+
+    #content {
+      width: 30%;
+      padding: 30px;
+      padding-right: 60px;
+      @include mixins.center;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 100%;
+
+      p {
+        // align-self: flex-end;
+      }
+    }
   }
 
   ul {
@@ -25,6 +50,10 @@ section#product {
 
       &:last-child {
         margin-right: 10px;
+      }
+
+      div {
+        height: 100%;
       }
 
       //   &:not(:last-child) {

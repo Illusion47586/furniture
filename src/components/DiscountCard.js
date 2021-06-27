@@ -1,8 +1,9 @@
-import { X } from "phosphor-react";
 import React, { useState } from "react";
-import classes from "../styles/css/components/discount.module.css";
 
 import { motion, AnimatePresence } from "framer-motion";
+import { X } from "phosphor-react";
+
+import classes from "../styles/css/components/discount.module.css";
 
 const variants = {
   hidden: { x: 320, transition: { duration: 0.5 } },
@@ -37,7 +38,7 @@ const DiscountCard = () => {
           </div>
 
           <div className={classes.close} onClick={() => setIsVisible(false)}>
-            <X size={15} color="white" />
+            <X size={18} color="white" />
           </div>
         </motion.div>
       )}

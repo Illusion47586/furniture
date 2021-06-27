@@ -1,24 +1,20 @@
-import React, { Suspense, useRef } from "react";
-import { Canvas } from "@react-three/fiber";
+import React, { Suspense } from "react";
+
 import {
-  ContactShadows,
-  Environment,
+  Box,
+  Center,
+  Html,
   OrbitControls,
+  Environment,
   Plane,
-  useHelper,
 } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
+import { Color, Euler, MeshBasicMaterial, Vector3 } from "three";
 
-import {
-  Vector3,
-  Euler,
-  SpotLightHelper,
-  MeshStandardMaterial,
-  MeshBasicMaterial,
-} from "three";
+import ChildModel from "./ChildModel";
+import Loader from "./Loader";
 
-const ThreeModel = ({ children }) => {
-  const light = useRef();
-  // useHelper(light, SpotLightHelper, "cyan");
+const ThreeModel = ({ path }) => {
   return (
     <Canvas
       // color="black"
@@ -28,22 +24,37 @@ const ThreeModel = ({ children }) => {
         fov: 50,
         near: 1,
         far: 1000,
-        position: [-6, 4, 4],
+        // position: [-6, 4, 4],
         // rotateY: Math.PI * 0.25,
-        zoom: 1.75,
+        zoom: focus ? 1.75 : 2,
       }}
     >
-      <ambientLight intensity={0.7} />
-      <spotLight
-        ref={light}
-        intensity={0.5}
-        angle={0.1}
-        penumbra={1}
-        position={[-5, 17, 20]}
-        castShadow
-      />
-      <Suspense fallback={null}>
-        {/* <group
+      <Suspense
+        fallback={
+          <Html div>
+            <Loader />
+          </Html>
+        }
+      >
+        <Center>
+          <ambientLight intensity={0.7} />
+          <spotLight
+            color={new Color("white")}
+            intensity={1}
+            angle={0.1}
+            penumbra={2}
+            position={[-5, 17, 20]}
+            castShadow
+          />
+          <spotLight
+            color={new Color("white")}
+            intensity={0.5}
+            angle={0.1}
+            penumbra={1}
+            position={[5, 17, -20]}
+            castShadow
+          />
+          {/* <group
           castShadow
           dispose={null}
           scale={new Vector3(2, 2, 2)}
@@ -51,24 +62,19 @@ const ThreeModel = ({ children }) => {
           position={new Vector3(-0.5, 0, 0.75)}
           animations={[]}
         > */}
-        {children}
-        {/* </group> */}
-        {/* <Environment preset="apartment" /> */}
 
-        <Plane
-          receiveShadow
-          material={new MeshBasicMaterial({ color: "white" })}
-          scale={new Vector3(20, 20, 20)}
-          rotation={new Euler(-Math.PI / 2, 0, 0)}
-          position={new Vector3(0, -0.002, 0)}
-        />
+          {/* </group> */}
+          <ChildModel path={path} />
+
+          <Environment preset="apartment" />
+          <OrbitControls
+            autoRotate
+            enableZoom={false}
+            enablePan={true}
+            enableRotate={true}
+          />
+        </Center>
       </Suspense>
-      <OrbitControls
-        // autoRotate
-        enableZoom={true}
-        enablePan={true}
-        enableRotate={true}
-      />
     </Canvas>
   );
 };

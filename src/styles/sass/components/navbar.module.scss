@@ -2,18 +2,17 @@
 @use '../abstracts/mixins';
 
 nav {
-  // background-image: constants.$noise_bg;\
   position: fixed;
-  // margin: 0;
   top: 30px;
-  left: 50%;
-  transform: translateX(-50%);
+  right: var(--basePadding);
   width: calc(100% - (2 * var(--basePadding)));
   backdrop-filter: blur(4px) brightness(95%);
   color: white;
   @include mixins.center;
   justify-content: space-between;
   padding: 1.5em 2.5em;
+
+  transform: all 0.3s;
 
   ul {
     list-style: none;
@@ -38,7 +37,6 @@ nav {
           opacity: 0;
           transition: all 300ms;
           overflow: hidden;
-          //   transform: translateX(-10%);
         }
 
         &:hover::after,
@@ -52,8 +50,12 @@ nav {
 
   &[data-expanded="false"] {
     padding-right: 1.5em;
-    // display: flex;
-    // flex-direction: column;
+  }
+
+  &[data-scrolled="true"] {
+    padding: 1.5em;
+    width: min-content;
+    cursor: pointer;
   }
 }
 
@@ -69,7 +71,6 @@ nav {
   backdrop-filter: blur(6px) brightness(95%);
 
   color: white;
-  // background-image: constants.$noise_bg;
 
   ul {
     flex-direction: column;
@@ -91,26 +92,18 @@ nav {
   }
 }
 
-// @media screen and (max-width: 768px) {
-//   nav {
-//     &[data-expanded="false"] {
-//       padding-right: 1.5em;
-//       display: flex;
-//     }
-//   }
-
-//   .menu {
-//     padding: 2em;
-//   }
-// }
-
-@media screen and (max-width: 426px) {
+@media screen and (max-width: 850px) {
   nav {
-    padding: 1em 2em;
-    width: calc(100% - (2 * var(--basePaddingMobile)));
+    padding: 1em;
+    width: min-content;
+    right: var(--basePaddingMobile);
 
     &[data-expanded="false"] {
-      padding-right: 1.5em;
+      padding-right: 1em;
+    }
+
+    &[data-scrolled="true"] {
+      padding: 1em;
     }
   }
 
