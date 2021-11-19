@@ -14,7 +14,7 @@ import { Color, Euler, MeshBasicMaterial, Vector3 } from "three";
 import ChildModel from "./ChildModel";
 import Loader from "./Loader";
 
-const ThreeModel = ({ path }) => {
+const ThreeModel = ({ path, focus, zoom }) => {
   return (
     <Canvas
       // color="black"
@@ -26,7 +26,7 @@ const ThreeModel = ({ path }) => {
         far: 1000,
         // position: [-6, 4, 4],
         // rotateY: Math.PI * 0.25,
-        zoom: focus ? 1.75 : 2,
+        zoom: zoom ? zoom : 2,
       }}
     >
       <Suspense
@@ -69,7 +69,7 @@ const ThreeModel = ({ path }) => {
           <Environment preset="apartment" />
           <OrbitControls
             autoRotate
-            enableZoom={true}
+            enableZoom={focus}
             enablePan={true}
             enableRotate={true}
           />
